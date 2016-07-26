@@ -14,10 +14,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
+   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+      // Override point for customization after application launch.
+
+
+      // customize navigation bar: red and white {
+      //
+      UIApplication.sharedApplication().statusBarStyle = UIStatusBarStyle.LightContent
+
+      // buttons
+      UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+      UINavigationBar.appearance().barTintColor = UIColor(red: CGFloat(196/255.0), green: CGFloat(18/255.0), blue: CGFloat(0), alpha: CGFloat(1))
+
+      // white 
+      // [View controller-based status bar appearance] set to NO in Info.plist
+
+      // title
+      UINavigationBar.appearance().titleTextAttributes = [
+         NSForegroundColorAttributeName:UIColor.whiteColor(),
+         NSFontAttributeName: UIFont(name: "Arial", size: 13)!
+      ]
+
+      // }
+
+      return true
+   }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
